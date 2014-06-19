@@ -60,8 +60,8 @@ var App = (function(){
         studiosListView = new ListView(".main ul");
         bindEvents();
 		
-		
-		if(typeof check !== 'undefined' || check  !== null){
+		var check = JSON.parse(localStorage.getItem("contacts"))
+		if(check != null || check.length){
 			alert("have");
 
 		}else{
@@ -77,9 +77,9 @@ var App = (function(){
         this.sync = sync;
         this.clear = clear;
 
-		var check = JSON.parse(localStorage.getItem("contacts"))
+	/*	var check = JSON.parse(localStorage.getItem("contacts"))
 		
-	/*
+	
 		if(typeof check !== 'undefined' || check  !== null){
 			alert("have");
 			populateStudiosList(getStudiosFromLocalStorage());
