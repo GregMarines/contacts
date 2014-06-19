@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Form elements - jQuery Mobile Demos</title>
+	</head>
+    <body>
+	
+	<div data-role="page">
+
+		<div data-role="header">
+			<h1>Page 1</h1>
+		</div>
+		
+		<div data-role="content" class="main">
+				<a href="#" id="sync">Sync</a></li>
+                <a href="#" id="clear">Clear</a>
+            
+			
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="Search fruits..." data-inset="true" id="contactlist"></ul>	
+		</div>
+	</div>
+		
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    <!--- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>--->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+    <script src="js/main.js"></script>
+	<script>
+		$(function(){
+			App.initialize();
+		});
+	</script>
+
+    </body>
+</html>
