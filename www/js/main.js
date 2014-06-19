@@ -57,25 +57,37 @@ var App = (function(){
     var db = localStorage;
 
     function initialize() {	
+	
+	
+	
+	
+	
         studiosListView = new ListView(".main ul");
         bindEvents();
+		
+		
+		 document.addEventListener("deviceready", onDeviceReady, true);
+		
+		
+		
         populateStudiosList(getStudiosFromLocalStorage());
 
         this.getStudios = getStudiosFromLocalStorage;
         this.sync = sync;
         this.clear = clear;
 
+		/*
 		var check = JSON.parse(localStorage.getItem("contacts"))
 		
-
-		if(typeof check !== 'undefined' && check  !== null){
+		
+		if(typeof check !== 'undefined' || check  !== null){
 			alert("have");
 			populateStudiosList(getStudiosFromLocalStorage());
 		}else{
 			alert("empty");
 			App.sync();
 		}		
-		/*
+		
 		if(check != null && check.length){
 			alert("have");
 			populateStudiosList(getStudiosFromLocalStorage());
@@ -86,6 +98,18 @@ var App = (function(){
 		*/
 
 	}
+	
+        var onDeviceReady = function() {
+			document.getElementById("devready").innerHTML = "OnDeviceReady fired.";
+			var check = JSON.parse(localStorage.getItem("contacts"))		 
+			if(typeof check !== 'undefined' || check  !== null){
+				alert("have");
+				populateStudiosList(getStudiosFromLocalStorage());
+			}else{
+				alert("empty");
+				App.sync();
+			}			
+        };	
 
     function bindEvents() {
         $("a#sync").on('click',sync);
