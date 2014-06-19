@@ -60,14 +60,9 @@ var App = (function(){
         studiosListView = new ListView(".main ul");
         bindEvents();
 		
-		var check = JSON.parse(localStorage.getItem("contacts"))
-		if(check != null || check.length){
-			alert("have");
-
-		}else{
-			alert("empty");
-			App.sync();
-		}			
+		if(localStorage.contacts === null){
+			alert("null")
+		};
 		
 		
 		
