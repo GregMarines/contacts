@@ -30,9 +30,15 @@
 
     <script src="js/main.js"></script>
 	<script>
+		document.addEventListener("deviceready", deviceIsReady, false);
+			function deviceIsReady() {
+				App.initialize();
+        };
+		/*
 		$(function(){
 			App.initialize();
 		});
+		*/
 	</script>
 
     </body>
