@@ -30,9 +30,32 @@
 
     <script src="js/main.js"></script>
 	<script>
+	
+		var deviceReadyDeferred = $.Deferred();
+		var jqmReadyDeferred = $.Deferred();
+
+		document.addEventListener("deviceReady", deviceReady, false);
+
+		function deviceReady() {
+		  deviceReadyDeferred.resolve();
+		}
+
+		$(document).one("mobileinit", function () {
+		  jqmReadyDeferred.resolve();
+		});
+
+		$.when(deviceReadyDeferred, jqmReadyDeferred).then(doWhenBothFrameworksLoaded);
+
+		function doWhenBothFrameworksLoaded() {
+		  	App.initialize();
+		}	
+	
+	
+	/*
 		$(function(){
 			App.initialize();
 		});
+	*/	
 	</script>
 
     </body>
