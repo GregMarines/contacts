@@ -59,30 +59,13 @@ var App = (function(){
     function initialize() {	
         studiosListView = new ListView(".main ul");
         bindEvents();
-		
-		if(localStorage.contacts == null){
-			alert("null")
-		};
-		
-		
-		/*
         populateStudiosList(getStudiosFromLocalStorage());
-		*/
+
         this.getStudios = getStudiosFromLocalStorage;
         this.sync = sync;
         this.clear = clear;
 
 		var check = JSON.parse(localStorage.getItem("contacts"))
-		
-	/*
-		if(typeof check !== 'undefined' || check  !== null){
-			alert("have");
-			populateStudiosList(getStudiosFromLocalStorage());
-		}else{
-			alert("empty");
-			App.sync();
-		}		
-	*/
 		if(check != null && check.length){
 			alert("have");
 			populateStudiosList(getStudiosFromLocalStorage());
@@ -90,7 +73,6 @@ var App = (function(){
 			alert("empty");
 			App.sync();
 		}
-		
 
 	}
 
